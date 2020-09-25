@@ -1,0 +1,12 @@
+
+1. 启动etcd
+2. 命令行操作etcd版本为v3---export ETCDCTL_API=3
+3. 创建root用户---etcdctl user add root
+4. 输入密码，确认后用户创建成功
+5. 启动权限认证---etcdctl auth enable
+6. 查看创建的root用户信息：
+    etcdctl --user root:etcd.user.root.pwd user get root
+    得到信息如下，root用户创建成功：
+    User: root
+    Roles: root
+7. 命令行启动当前程序，参数传入etcd root用户密码
